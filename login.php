@@ -37,6 +37,8 @@ if ( isset($_POST["identifiantLogin"]) && isset($_POST["PasswordLogin"])) {
       if ( IsPasswordTheSameAsHash($_POST["PasswordLogin"],$_POST["identifiantLogin"]) == true ){
           echo "C'est bon";
           session_start();
+          $_SESSION['identifiantLogin'] = getIDuserbyLoginAndPassword($_POST["identifiantLogin"],HashPassword($_POST["PasswordLogin"]))['idPers'];
+          echo $_SESSION['identifiantLogin'];
       } else {
           echo "C'est pas bon";
       }

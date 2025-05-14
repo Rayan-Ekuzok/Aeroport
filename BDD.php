@@ -70,7 +70,12 @@ function getInfoAvion($idntifiant){
 }
 
 
-
+function getIDuserbyLoginAndPassword($idntifiant,$Password){
+    $sqlPers = "select idPers From personnels Where login =".$idntifiant." AND mdp = ".$Password.";";
+    $leFlux = mysqli_query(getLiaison(), $sqlPers);
+    $MaListe = mysqli_fetch_assoc($leFlux);
+    return $MaListe;
+}
 
 
 

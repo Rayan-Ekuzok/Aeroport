@@ -49,6 +49,11 @@ function GetNav(){
     </a>
 
     </nav>";
+
+
+    if ( ){
+        
+    }
 }
 
 
