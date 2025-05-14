@@ -9,11 +9,6 @@ function getLiaison(){
 }
 
 
-function Test(){
-    return $leFlux;
-}
-
-
 function getInfoAllVol(){
     $sqlVols = "select idVol, horaireDepart, horaireArrive, dateDepart, dateArrive, depart, arrive, nom, idPorte, idAvion from vols, destinationaeroport, compagnieaerienne WHERE vols.idDestination = destinationaeroport.idDestination And vols.idComp = compagnieaerienne.idComp;";
     $leFlux = mysqli_query(getLiaison(), $sqlVols);
@@ -53,8 +48,8 @@ function getPasswordUser($identifiant){
    return false;
 }
 
- function getInfoPers($idntifiant){
-    $sqlPers = "SELECT idVol, personnels.idPers, nom, prenom, libelleTache, quantite, nomRessource FROM personnels, assigner, taches, designer, ressources WHERE personnels.idPers = assigner.idPers AND assigner.idTache = taches.idTache AND taches.idTache = designer.idTache and designer.idRessource = ressources.idRessource AND idVol = 1".$identifiant."';";
+function getInfoPers($idntifiant){
+    $sqlPers = "SELECT idVol, personnels.idPers, nom, prenom, libelleTache, quantite, nomRessource FROM personnels, assigner, taches, designer, ressources WHERE personnels.idPers = assigner.idPers AND assigner.idTache = taches.idTache AND taches.idTache = designer.idTache and designer.idRessource = ressources.idRessource AND idVol =".$idntifiant."S;";
     $leFlux = mysqli_query(getLiaison(), $sqlPers);
     $MaListe = mysqli_fetch_assoc($leFlux);
     return $MaListe;
@@ -64,8 +59,6 @@ function getPasswordUser($identifiant){
 
 
 
-function IsThePasswordCorrect(){
-    
-}
+
 
 ?>

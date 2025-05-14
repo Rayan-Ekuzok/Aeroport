@@ -106,10 +106,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
                 echo "<td><button name= 'search' value=".$compteur."> " .$value. " </td>";
             }
             echo "</tr>";
+    } 
+    }   else {
+        $info2 = getInfoPers($_GET["search"]);
+        foreach ($info2 as $key => $value) {
+            echo "<tr> ";
+            $compteur ++;
+            foreach ($value as $key => $value) {
+                echo "<td><button name= 'search' value=".$compteur."> " .$value. " </td>";
+            }
+            echo "</tr>";
+            }
         }
-
-        //else {}
-    }
+    
     echo "</table></form>";
 
 
