@@ -9,9 +9,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <title></title>
         <link href="Aeroport.css" rel="stylesheet" type="text/css"/>
     </head>
-  <body><div class="area"></div><nav class="main-menu">
-
-
+  <body><div class="area"></div>
+  
+<nav class="main-menu">
 <a href="index.php">
     <i class="fa fa-home fa-2x"></i>
        Acceuille
