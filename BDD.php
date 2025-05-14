@@ -5,7 +5,7 @@
 
 
 function getLiaison(){
-    return mysqli_connect("localhost","root","","aeroport");
+    return mysqli_connect("mysql-rayanfellous.alwaysdata.net","413147","LeSelLaBaleine55","rayanfellous_aeroportbdd");
 }
 
 
