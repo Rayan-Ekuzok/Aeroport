@@ -75,20 +75,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
       include_once 'doLogin.php';
 
 
-// if (!$_POST["identifiantLogin"] == null && !$_POST["PasswordLogin"] == null) {
 
 if ( isset($_POST["identifiantLogin"]) && isset($_POST["PasswordLogin"])) {
       //if (!$_POST["identifiantLogin"] == null && !$_POST["PasswordLogin"] == null) {
-
-        echo $_POST["identifiantLogin"];
-
-        echo $_POST["PasswordLogin"];
-
-        echo ". . . . Données hachées : " . hash('sha256', $_POST["PasswordLogin"].GetSalt());
-        echo IsPasswordTheSameAsHash($_POST["PasswordLogin"],$_POST["identifiantLogin"]);
-      
-      
-      
       if ( IsPasswordTheSameAsHash($_POST["PasswordLogin"],$_POST["identifiantLogin"]) == true ){
           echo "C'est bon";
           session_start();
@@ -97,36 +86,6 @@ if ( isset($_POST["identifiantLogin"]) && isset($_POST["PasswordLogin"])) {
       }
       }
       
-      //echo password_hash($_POST["PasswordLogin"], PASSWORD_DEFAULT);
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-      ?>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+?>   
     </body>
 </html>
