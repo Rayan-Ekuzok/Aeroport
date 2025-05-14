@@ -55,6 +55,19 @@ function getInfoPers($idntifiant){
     return $MaListe;
 }
 
+function getPassagerVol($idntifiant){
+    $sqlPers = "select passagers.idPassager, nom, prenom from billet, passagers WHERE billet.idPassager = passagers.idPassager and idVol =".$idntifiant.";";
+    $leFlux = mysqli_query(getLiaison(), $sqlPers);
+    $MaListe = mysqli_fetch_all($leFlux);
+    return $MaListe;
+}
+
+function getInfoAvion($idntifiant){
+    $sqlPers = "select idVol, avion.idAvion, marque, modele from vols, avion where vols.idAvion = avion.idAvion and idVol = ".$idntifiant.";";
+    $leFlux = mysqli_query(getLiaison(), $sqlPers);
+    $MaListe = mysqli_fetch_all($leFlux);
+    return $MaListe;
+}
 
 
 

@@ -110,10 +110,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     } 
     }   else {
         echo "
-        <form method='get' action='vol.php'>
+
         <table>
         <tr>";
+
         $info2 = getInfoPers($_GET["search"]);
+
         echo "<td>Id de Vol</td>
         <td>Id de Personnels</td>
         <td>Nom</td>
@@ -129,11 +131,75 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             echo "<tr> ";
             $compteur ++;
             foreach ($value as $key => $value) {
-                echo "<td><button name= 'search' value=".$compteur."> " .$value. " </td>";
+                echo "<td>".$value. " </td>";
             }
             echo "</tr>";
             }
-        }
+
+    
+        echo "</table>";
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+
+        ///////////////////////////////////////////////////////2ème tableau
+
+        echo "
+
+        <table>
+        <tr>";
+
+        $info3 = getPassagerVol($_GET["search"]);
+
+        echo "<td>ID Passagers</td>
+        <td>Nom</td>
+        <td>Prénom</td>
+        </tr>";
+
+
+
+        foreach ($info3 as $key => $value) {
+            echo "<tr> ";
+            $compteur ++;
+            foreach ($value as $key => $value) {
+                echo "<td>".$value. " </td>";
+            }
+            echo "</tr>";
+            }
+
+    
+        echo "</table>";
+        //////////////////////////////////////////////3
+        echo "
+
+        <table>
+        <tr>";        
+        echo "<br>";
+        echo "<br>";
+        echo "<br>";
+
+        $info4 = getInfoAvion($_GET["search"]);
+
+        echo "<td>ID Vol</td>
+        <td>ID Avion</td>
+        <td>Marque</td>
+        <td>Modèle</td>
+        </tr>";
+
+
+
+        foreach ($info4 as $key => $value) {
+            echo "<tr> ";
+            $compteur ++;
+            foreach ($value as $key => $value) {
+                echo "<td>".$value. " </td>";
+            }
+            echo "</tr>";
+            }
+
+    
+        echo "</table>";
+    }
     
     echo "</table></form>";
 
@@ -148,11 +214,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
 
 
     table {
+        margin: 1em;
         border: 1px solid;
         width: 100%;
         padding:10px;
-  border-spacing: 0;
-  border-collapse: collapse;
+        border-spacing: 0;
+        border-collapse: collapse;
     }
     tr{
         border: 1px solid;
