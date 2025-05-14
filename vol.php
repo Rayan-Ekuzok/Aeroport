@@ -79,46 +79,49 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
       
     <br>
     <br>
-    <form method="get" action="vol.php">
+    <?php
+    if (!isset($_GET["search"]) || $_GET["search"] == "" ){
+        echo "
+        <form method='get' action='vol.php'>
         <table>
-        <tr>
-            <td>Id de Vol</td>
-            <td>Horaire de Départ</td>
-            <td>Horaire d'Arrivé</td>
-            <td>Date de Départ</td>
-            <td>Date d'Arrivé</td>
-            <td>Depart</td>
-            <td>Arrive</td>
-            <td>Nom de la compagnie</td>
-            <td>Id de la Porte</td>
-            <td>Id de l'avion</td>
-            </tr>
-                <?php
+        <tr>";
+            
+        echo "<td>Id de Vol</td>
+        <td>Horaire de Départ</td>
+        <td>Horaire d'Arrivé</td>
+        <td>Date de Départ</td>
+        <td>Date d'Arrivé</td>
+        <td>Depart</td>
+        <td>Arrive</td>
+        <td>Nom de la compagnie</td>
+        <td>Id de la Porte</td>
+        <td>Id de l'avion</td>
+        </tr>";
+            
+        $compteur = 0;
+        foreach ($info as $key => $value) {
+            echo "<tr> ";
+            $compteur ++;
+            foreach ($value as $key => $value) {
+                echo "<td><button name= 'search' value=".$compteur."> " .$value. " </td>";
+            }
+            echo "</tr>";
+        }
 
-                $compteur = 0;
-                foreach ($info as $key => $value) {
-                    echo "<tr> ";
-                    $compteur ++;
-                    foreach ($value as $key => $value) {
-                        echo "<td><button name= 'search' value=".$compteur."> " .$value. " </td>";
-                    }
-                    echo "</tr>";
+        //else {}
+    }
+    echo "</table></form>";
 
 
 
 
-                }
+        echo "<form method='get' action='vol.php'><button name='search' value='' id='buttontrèsimportant' >Retours</button></form>";
 
-
-                
-                ?>
-        </table>
-                
-            </form>
-
-      
+?>
     <style>
-    
+
+
+
     table {
         border: 1px solid;
         width: 100%;
