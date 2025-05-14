@@ -11,55 +11,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     </head>
   <body><div class="area"></div>
   
-<nav class="main-menu">
-<a href="index.php">
-    <i class="fa fa-home fa-2x"></i>
-       Acceuille
-</a>
-
-
-
-<a href="vol.php">
-    <i class="fa fa-globe fa-2x"></i>
-
-        Vol actuelle
-
-</a>
-
-<a href="passagers.php">
-    <i class="fa fa-film fa-2x"></i>
-
-        Passagers
-
-</a>
-
-<a href="personnels.php">
-    <i class="fa fa-film fa-2x"></i>
-
-        Personnels
-
-</a>
-
-
-<a href="login.php">
-   <i class="fa fa-cogs fa-2x"></i>
-
-        Connexion
-
-</a>
-
-
-
-<a href="#">
-     <i class="fa fa-power-off fa-2x"></i>
-
-        Logout
-
-</a>
-
-</nav>
-      
-      
+<?php
+include_once 'menu.php';
+GetNav();   
+?>
       
       <h1> Aéroport International d'Élyria </h1>
       <span>

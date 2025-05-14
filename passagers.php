@@ -9,56 +9,14 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <title></title>
         <link href="Aeroport.css" rel="stylesheet" type="text/css"/>
     </head>
-  <body><div class="area"></div><nav class="main-menu">
+  <body>
+<?php
+include_once 'menu.php';
+GetNav();   
+?> 
+    
+    
 
-
-<a href="index.php">
-    <i class="fa fa-home fa-2x"></i>
-       Acceuille
-</a>
-
-
-
-<a href="vol.php">
-    <i class="fa fa-globe fa-2x"></i>
-
-        Vol actuelle
-
-</a>
-
-<a href="passagers.php">
-    <i class="fa fa-film fa-2x"></i>
-
-        Passagers
-
-</a>
-
-<a href="personnels.php">
-    <i class="fa fa-film fa-2x"></i>
-
-        Personnels
-
-</a>
-
-
-<a href="login.php">
-   <i class="fa fa-cogs fa-2x"></i>
-
-        Connexion
-
-</a>
-
-
-
-<a href="#">
-     <i class="fa fa-power-off fa-2x"></i>
-
-        Logout
-
-</a>
-
-</nav>
-      
       <h1>Liste des Passagers</h1>
       <span id="login">
             <input type="text" placeholder="Recherche" id="BarRecherche" >
