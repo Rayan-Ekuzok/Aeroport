@@ -80,6 +80,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
     <br>
     <br>
     <?php
+    $compteur = 0;
     if (!isset($_GET["search"]) || $_GET["search"] == "" ){
         echo "
         <form method='get' action='vol.php'>
@@ -98,7 +99,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
         <td>Id de l'avion</td>
         </tr>";
             
-        $compteur = 0;
+        
         foreach ($info as $key => $value) {
             echo "<tr> ";
             $compteur ++;
@@ -108,7 +109,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
             echo "</tr>";
     } 
     }   else {
+        echo "
+        <form method='get' action='vol.php'>
+        <table>
+        <tr>";
         $info2 = getInfoPers($_GET["search"]);
+        echo "<td>Id de Vol</td>
+        <td>Id de Personnels</td>
+        <td>Nom</td>
+        <td>Prenom</td>
+        <td>Tâches</td>
+        <td>Quantité</td>
+        <td>Nom de la ressource</td>
+        </tr>";
+
+
+
         foreach ($info2 as $key => $value) {
             echo "<tr> ";
             $compteur ++;

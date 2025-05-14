@@ -49,9 +49,9 @@ function getPasswordUser($identifiant){
 }
 
 function getInfoPers($idntifiant){
-    $sqlPers = "SELECT idVol, personnels.idPers, nom, prenom, libelleTache, quantite, nomRessource FROM personnels, assigner, taches, designer, ressources WHERE personnels.idPers = assigner.idPers AND assigner.idTache = taches.idTache AND taches.idTache = designer.idTache and designer.idRessource = ressources.idRessource AND idVol =".$idntifiant."S;";
+    $sqlPers = "SELECT idVol, personnels.idPers, nom, prenom, libelleTache, quantite, nomRessource FROM personnels, assigner, taches, designer, ressources WHERE personnels.idPers = assigner.idPers AND assigner.idTache = taches.idTache AND taches.idTache = designer.idTache and designer.idRessource = ressources.idRessource AND idVol =".$idntifiant.";";
     $leFlux = mysqli_query(getLiaison(), $sqlPers);
-    $MaListe = mysqli_fetch_assoc($leFlux);
+    $MaListe = mysqli_fetch_all($leFlux);
     return $MaListe;
 }
 
