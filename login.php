@@ -32,17 +32,22 @@ GetNav();
 
 
 
+
 if ( isset($_POST["identifiantLogin"]) && isset($_POST["PasswordLogin"])) {
-      //if (!$_POST["identifiantLogin"] == null && !$_POST["PasswordLogin"] == null) {
       if ( IsPasswordTheSameAsHash($_POST["PasswordLogin"],$_POST["identifiantLogin"]) == true ){
-          echo "C'est bon";
           session_start();
           $_SESSION['identifiantLogin'] = getIDuserbyLoginAndPassword($_POST["identifiantLogin"],HashPassword($_POST["PasswordLogin"]))['idPers'];
           echo $_SESSION['identifiantLogin'];
+          echo session_status();
       } else {
           echo "C'est pas bon";
+          echo session_status();
       }
-      }
+}
+
+
+
+
       
 ?>   
     </body>

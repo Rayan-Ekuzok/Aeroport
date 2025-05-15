@@ -1,4 +1,5 @@
 <?php
+include_once 'doLogin.php';
 
 function GetNav(){
     echo"
@@ -9,7 +10,7 @@ function GetNav(){
     </a> 
 
     ";
-    if (isset($_SESSION['identifiantLogin'])) {
+    if (isUserLoggedIn()) {
 
     
 
@@ -35,24 +36,19 @@ function GetNav(){
             Personnels
 
     </a>";
-
+if(isUserLoggedIn()){
     echo " 
-    <a href='#'>
-        <input type='submit' name='button1'
-                class='button' value='Button1' />
+        <a href='#'>
+        <i class='fa fa-power-off fa-2x'></i>
 
             Logout
 
     </a>
     
     </nav>";
-        }
-    if(!isset($_SESSION['identifiantLogin'])) {
-
+        } 
     
-
-
-
+if(!isUserLoggedIn()){
 
     echo "<a href='login.php'>
     <i class='fa fa-cogs fa-2x'></i>
@@ -60,23 +56,28 @@ function GetNav(){
             Connexion
 
     </a> </nav>";
+}
+
+
+    
+    
+
+
+
+
 
 
 
 
 
     }
-    if (isset($_SESSION['identifiantLogin'])){
+    if (isUserLoggedIn()){
         echo "<p>Tu est connecter</p>";
     }
 }
 
 
-if(array_key_exists('button1', $_POST)) {
-            button1();
-}
 
-function button1(){
-    session_abort();
-}
+
+
 ?>
