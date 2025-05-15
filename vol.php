@@ -166,33 +166,30 @@ GetNav();
 
 ?>
     <style>
-
-
-
-    table {
-        margin: 1em;
-        border: 1px solid;
-        width: 100%;
-        padding:10px;
-        border-spacing: 0;
-        border-collapse: collapse;
-    }
-    tr{
-        border: 1px solid;
-    }
-    td{
-        padding: 7px;
-        text-align: left;
-    }
-    tr:nth-child(even) > td{
-        background-color:#cdd2e4;
-    }
-    tr:nth-child(odd) > td{
-        background-color:#e8eaf5;
-    }
-    tr:first-child > td{
-        background-color:#5a77b8;
-    }
+table {
+    margin: 1em;
+    border: 1px solid;
+    width: 100%;
+    padding:10px;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+tr{
+    border: 1px solid;
+}
+td{
+    padding: 7px;
+    text-align: left;
+}
+tr:nth-child(even) > td{
+    background-color:#cdd2e4;
+}
+tr:nth-child(odd) > td{
+    background-color:#e8eaf5;
+}
+tr:first-child > td{
+    background-color:#5a77b8;
+}
 
 button{
     background-color: inherit;
@@ -212,6 +209,9 @@ button{
     text-decoration: none;
     text-indent: 0;
 }
+
+
+
 
     </style>
     </body>

@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edit this template
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -12,11 +8,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
   <body class="pagelogin">
   <?php
 include_once 'menu.php';
-GetNav();   
+GetNav();  
 ?>
       
       
-      
+
+
       <h1> Login Page </h1>
       <form action="login.php" method="POST">
           <span id="login">
@@ -35,14 +32,16 @@ GetNav();
 
 if ( isset($_POST["identifiantLogin"]) && isset($_POST["PasswordLogin"])) {
       if ( IsPasswordTheSameAsHash($_POST["PasswordLogin"],$_POST["identifiantLogin"]) == true ){
-          session_start();
-          $_SESSION['identifiantLogin'] = getIDuserbyLoginAndPassword($_POST["identifiantLogin"],HashPassword($_POST["PasswordLogin"]))['idPers'];
-          echo $_SESSION['identifiantLogin'];
-          echo session_status();
+        $_SESSION['identifiantLogin'] = getIDuserbyLoginAndPassword($_POST["identifiantLogin"],HashPassword($_POST["PasswordLogin"]))['idPers'];
+        if (session_status() == 0 || session_status() == 1){
+            session_start();
+        }
       } else {
-          echo "C'est pas bon";
-          echo session_status();
+        logout();
+        echo "C'est pas bon";
+        echo session_status();
       }
+        header("Location: index.php");
 }
 
 

@@ -79,7 +79,7 @@ nav {
     margin: 0%;
     display: flexbox;
 }
-nav >  a {
+a, form {
     color: aliceblue;
     padding-left: 1.7em;
 
@@ -112,3 +112,9 @@ body{
  margin: 5px;
     
 }
+
+#buttonmoinsimportant{
+    background-color: inherit;
+    color: aliceblue;
+}
+
