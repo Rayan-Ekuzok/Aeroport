@@ -13,7 +13,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Project/PHP/PHPProject.php to edi
   
 <?php
 include_once 'menu.php';
-GetNav();   
+GetNav();
 ?>
       
       <h1> Aéroport International d'Élyria </h1>

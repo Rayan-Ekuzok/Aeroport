@@ -6,11 +6,16 @@ function GetNav(){
     <a href='index.php'>
         <i class='fa fa-home fa-2x'></i>
         Accueil
-    </a>
+    </a> 
+
+    ";
+    if (isset($_SESSION['identifiantLogin'])) {
+
+    
 
 
 
-    <a href='vol.php'>
+    echo " <a href='vol.php'>
         <i class='fa fa-globe fa-2x'></i>
 
             Vols actuels
@@ -29,52 +34,49 @@ function GetNav(){
 
             Personnels
 
-    </a>
+    </a>";
 
-
-    <a href='login.php'>
-    <i class='fa fa-cogs fa-2x'></i>
-
-            Connexion
-
-    </a>
-
-
-
+    echo " 
     <a href='#'>
-        <i class='fa fa-power-off fa-2x'></i>
+        <input type='submit' name='button1'
+                class='button' value='Button1' />
 
             Logout
 
     </a>
-
+    
     </nav>";
+        }
+    if(!isset($_SESSION['identifiantLogin'])) {
+
+    
 
 
-    if ( ){
-        
+
+
+    echo "<a href='login.php'>
+    <i class='fa fa-cogs fa-2x'></i>
+
+            Connexion
+
+    </a> </nav>";
+
+
+
+
+
+    }
+    if (isset($_SESSION['identifiantLogin'])){
+        echo "<p>Tu est connecter</p>";
     }
 }
 
 
+if(array_key_exists('button1', $_POST)) {
+            button1();
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function button1(){
+    session_abort();
+}
 ?>

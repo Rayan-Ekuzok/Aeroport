@@ -48,35 +48,41 @@ function getPasswordUser($identifiant){
    return false;
 }
 
-function getInfoPers($idntifiant){
-    $sqlPers = "SELECT idVol, personnels.idPers, nom, prenom, libelleTache, quantite, nomRessource FROM personnels, assigner, taches, designer, ressources WHERE personnels.idPers = assigner.idPers AND assigner.idTache = taches.idTache AND taches.idTache = designer.idTache and designer.idRessource = ressources.idRessource AND idVol =".$idntifiant.";";
+function getInfoPers($identifiant){
+    $sqlPers = "SELECT idVol, personnels.idPers, nom, prenom, libelleTache, quantite, nomRessource FROM personnels, assigner, taches, designer, ressources WHERE personnels.idPers = assigner.idPers AND assigner.idTache = taches.idTache AND taches.idTache = designer.idTache and designer.idRessource = ressources.idRessource AND idVol =".$identifiant.";";
     $leFlux = mysqli_query(getLiaison(), $sqlPers);
     $MaListe = mysqli_fetch_all($leFlux);
     return $MaListe;
 }
 
-function getPassagerVol($idntifiant){
-    $sqlPers = "select passagers.idPassager, nom, prenom from billet, passagers WHERE billet.idPassager = passagers.idPassager and idVol =".$idntifiant.";";
+function getPassagerVol($identifiant){
+    $sqlPers = "select passagers.idPassager, nom, prenom from billet, passagers WHERE billet.idPassager = passagers.idPassager and idVol =".$identifiant.";";
     $leFlux = mysqli_query(getLiaison(), $sqlPers);
     $MaListe = mysqli_fetch_all($leFlux);
     return $MaListe;
 }
 
-function getInfoAvion($idntifiant){
-    $sqlPers = "select idVol, avion.idAvion, marque, modele from vols, avion where vols.idAvion = avion.idAvion and idVol = ".$idntifiant.";";
+function getInfoAvion($identifiant){
+    $sqlPers = "select idVol, avion.idAvion, marque, modele from vols, avion where vols.idAvion = avion.idAvion and idVol = ".$identifiant.";";
     $leFlux = mysqli_query(getLiaison(), $sqlPers);
     $MaListe = mysqli_fetch_all($leFlux);
     return $MaListe;
 }
 
 
-function getIDuserbyLoginAndPassword($idntifiant,$Password){
-    $sqlPers = "select idPers From personnels Where login =".$idntifiant." AND mdp = ".$Password.";";
+function getIDuserbyLoginAndPassword($identifiant,$Password){
+    $sqlPers = "select idPers From personnels Where login ='".$identifiant."' AND mdp = '".$Password."';";
     $leFlux = mysqli_query(getLiaison(), $sqlPers);
     $MaListe = mysqli_fetch_assoc($leFlux);
     return $MaListe;
 }
 
+function getNamePreNameByID($identifiant){
+    $sqlPers = "select personnels.nom, personnels.prenom From personnels Where personnels.idPers = '".$identifiant.";";
+    $leFlux = mysqli_query(getLiaison(), $sqlPers);
+    $MaListe = mysqli_fetch_assoc($leFlux);
+    return $MaListe;
+}
 
 
 ?>
