@@ -1,3 +1,6 @@
+<?php
+include_once 'doLogin.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,7 +28,6 @@ GetNav();
 
       <?php
       include_once 'BDD.php';
-      include_once 'doLogin.php';
 
 
 

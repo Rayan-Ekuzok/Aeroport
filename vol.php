@@ -1,3 +1,9 @@
+<?php
+include_once 'doLogin.php';
+if (isUserLoggedIn()==false){
+    header("Location: login.php");
+}
+?>
 <!DOCTYPE html>
 <!--
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license

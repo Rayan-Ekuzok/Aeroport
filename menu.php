@@ -1,5 +1,4 @@
 <?php
-include_once 'doLogin.php';
 
 function GetNav(){
     echo"
